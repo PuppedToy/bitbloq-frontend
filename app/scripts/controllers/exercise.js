@@ -121,7 +121,7 @@ angular.module('bitbloqApp')
                     result = false;
                     break;
                 case 'bqZUM':
-                case 'bqZUM20'
+                case 'bqZUM20':
                 case 'FreaduinoUNO':
                 case 'ArduinoMEGA2560':
                 case 'ArduinoUNO':
