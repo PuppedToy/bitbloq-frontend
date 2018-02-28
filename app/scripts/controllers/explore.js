@@ -314,6 +314,9 @@ angular.module('bitbloqApp')
             option: 'FreaduinoUNO',
             value: false
         }, {
+            option: 'bqZUM20',
+            value: false
+        }, {
             option: 'ArduinoUNO',
             value: false
         }, {

@@ -463,7 +463,7 @@ angular.module('bitbloqApp')
                 _includeComponents(wirelessComponents);
             }
             var hardware = _.cloneDeep(exports.exercise.hardware);
-            if (exports.exercise.useBitbloqConnect && exports.exercise.hardware.board === 'bqZUM' && exports.exercise.bitbloqConnectBT) {
+            if (exports.exercise.useBitbloqConnect && (exports.exercise.hardware.board === 'bqZUM' || exports.exercise.hardware.board === 'bqZUM20') && exports.exercise.bitbloqConnectBT) {
                 hardware.components.push(exports.exercise.bitbloqConnectBT);
             }
 
@@ -613,7 +613,7 @@ angular.module('bitbloqApp')
                     }
                 });
 
-                if (exports.exercise.useBitbloqConnect && (exports.exercise.hardware.board === 'bqZUM') && exports.exercise.bitbloqConnectBT) {
+                if (exports.exercise.useBitbloqConnect && (exports.exercise.hardware.board === 'bqZUM' || exports.exercise.hardware.board === 'bqZUM20') && exports.exercise.bitbloqConnectBT) {
                     exports.addComponentInComponentsArray('serialElements', exports.exercise.bitbloqConnectBT);
                 }
             }

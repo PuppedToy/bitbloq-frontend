@@ -380,7 +380,7 @@ function hardwareTabCtrl($rootScope, $scope, $document, $log, hw2Bloqs, alertsSe
         if (!$scope.currentProject.useBitbloqConnect) {
             $scope.currentProject.useBitbloqConnect = true;
             $scope.currentProject.bitbloqConnectBT = {
-                message: $scope.currentProject.hardware.board === 'bqZUM' ? $scope.common.translate('device-has-bluetooth') : $scope.common.translate('device-needs-bluetooth')
+                message: ($scope.currentProject.hardware.board === 'bqZUM' || $scope.currentProject.hardware.board === 'bqZUM20') ? $scope.common.translate('device-has-bluetooth') : $scope.common.translate('device-needs-bluetooth')
             };
 
             var btConnected = _.find(currentProjectService.componentsArray.serialElements, function(component) {
@@ -756,6 +756,7 @@ function hardwareTabCtrl($rootScope, $scope, $document, $log, hw2Bloqs, alertsSe
             case 'bt':
                 switch (boardMetadata.uuid) {
                     case 'bqZUM':
+                    case 'bqZUM20':
                         newComponent.baudRate = 19200;
                         break;
                     case 'FreaduinoUNO':
@@ -796,6 +797,7 @@ function hardwareTabCtrl($rootScope, $scope, $document, $log, hw2Bloqs, alertsSe
                 if (item.uuid === 'bt') {
                     switch (currentProjectService.getBoardMetaData().uuid) {
                         case 'bqZUM':
+                        case 'bqZUM20':
                             item.baudRate = 19200;
                             break;
                         case 'FreaduinoUNO':

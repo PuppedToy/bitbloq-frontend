@@ -245,7 +245,7 @@ angular.module('bitbloqApp')
                     _includeComponents(wirelessComponents);
                 }
                 var hardware = _.cloneDeep(exports.project.hardware);
-                if (exports.project.useBitbloqConnect && exports.project.hardware.board === 'bqZUM' && exports.project.bitbloqConnectBT) {
+                if (exports.project.useBitbloqConnect && (exports.project.hardware.board === 'bqZUM' || exports.project.hardware.board === 'bqZUM20') && exports.project.bitbloqConnectBT) {
                     hardware.components.push(exports.project.bitbloqConnectBT);
                 }
                 code = arduinoGeneration.getCode({
@@ -394,7 +394,7 @@ angular.module('bitbloqApp')
                 });
             }
 
-            if (exports.project.useBitbloqConnect && (exports.project.hardware.board === 'bqZUM') && exports.project.bitbloqConnectBT) {
+            if (exports.project.useBitbloqConnect && (exports.project.hardware.board === 'bqZUM' || exports.project.hardware.board === 'bqZUM20') && exports.project.bitbloqConnectBT) {
                 exports.addComponentInComponentsArray('serialElements', exports.project.bitbloqConnectBT);
             }
         };
